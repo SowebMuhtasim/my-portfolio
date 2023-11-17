@@ -29,45 +29,54 @@
     </div>
 </div>
 <!------about----- -->
-<div id="ABOUT">
+<div id="about">
     <div class="container">
-        <div class="row">
-            <div class="ABOUT-col-1">
-                <img src="images/WhatsApp Image 2023-09-13 at 23.42.11.jpg">
-            </div>
-            <div class="ABOUT-col-2">
-                <h1 class="sub-title">About Me</h1>
-                <p>Hello, I'm Muhammad Muhtassim Billah, and I'm passionate about the world of data. As a data entry specialist, I thrive on the meticulous process of transforming information into organized, meaningful data sets.For me, data isn't just numbers and words; it's the key to unlocking insights and making informed decisions.I'm here to assist you in handling your data entry needs efficiently and accurately.</p>
-                <div class="tab-titles">
-                    <p class="tab-links active-link" oneclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" oneclick="opentab('Experience')">Experience</p>
-                    <p class="tab-links" oneclick="opentab('Education')">Education</p>
-                </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Data Entry</span><br>Ms Word,Ms Excel,Google Spreadsheet</li>
-                        <li><span>Data Minning</span><br>All</li>
-                        <li><span>Web Research</span></li>
-                        <li><span>Copy Paste</span></li>
-                        <li><span>PDF Extraction</span></li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="Experience">
-                    <ul>
-                        <li><span>Currently</span><br>Working as a freelancer in diffrent platform.</li>
-                        <li><span>2021-current</span><br>Working as trainee in Dream IT institution</li>
-                        </ul>
-                    </div> 
-                <div class="tab-contents" id="Education">
-                    <ul>
-                        <li><span>2023</span><br>BBA from BRAC UNIVERSITY</li>
-                        <li><span>2020</span><br>Learnt from Dream IT institution</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="row">
+        <div class="ABOUT-col-1">
+          <img src="images/WhatsApp Image 2023-09-13 at 23.42.11.jpg" />
         </div>
+        <div class="ABOUT-col-2">
+          <h1 class="sub-title">About Me</h1>
+
+          <div class="tab-titles">
+            <p class="tab_links active_link" data-tab="1">Skills</p>
+            <p class="tab_links" data-tab="2">Experience</p>
+            <p class="tab_links" data-tab="3">Education</p>
+          </div>
+          <div class="tab_contents tab__content--1 active_tab">
+            <ul>
+              <li>
+                <span>Data Entry</span><br />Ms Word,Ms Excel,Google
+                Spreadsheet
+              </li>
+              <li><span>Data Minning</span><br />All</li>
+              <li><span>Web Scrapping</span></li>
+              <li><span>Content Writing</span></li>
+              <li><span>PDF Extraction</span></li>
+            </ul>
+          </div>
+          <div class="tab_contents tab__content--2">
+            <ul>
+              <li>
+                <span>Currently</span><br />Working as a freelancer in
+                diffrent platform.
+              </li>
+              <li>
+                <span>2021-current</span><br />Working as trainee in Dream IT
+                institution
+              </li>
+            </ul>
+          </div>
+          <div class="tab_contents tab__content--3">
+            <ul>
+              <li><span>2023</span><br />BBA from BRAC UNIVERSITY</li>
+              <li><span>2020</span><br />Learnt from Dream IT institution</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 <!-----------------------------------------------------services(not working)-------->
 <div id="SERVICES">
     <div class="container">
@@ -258,6 +267,29 @@ function opentab(tabname){
         btn.style.display = "none"
        }
     }
+  </script>
+  <script>
+    const tabsContainer = document.querySelector(".tab-titles");
+const tabs = document.querySelectorAll(".tab_links");
+const tabsContent = document.querySelectorAll(".tab_contents");
+
+tabsContainer.addEventListener("click", (e) => {
+  const tab = e.target.closest(".tab_links");
+  if (!tab) return;
+
+  tabs.forEach((tab) => {
+    tab.classList.remove("active_link");
+  });
+
+  tabsContent.forEach((content) => {
+    content.classList.remove("active_tab");
+  });
+  tab.classList.add("active_link");
+
+  document
+    .querySelector(`.tab__content--${tab.dataset.tab}`)
+    .classList.add("active_tab");
+});
   </script>
 </body>
 </html> 
