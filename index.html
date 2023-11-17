@@ -18,10 +18,9 @@
                 <li><a href="#SERVICES">SERVICES</a></li>
                 <li><a href="#portfolio">PORTFOLIO</a></li>
                 <li><a href="#CONTACT">CONTACT ME</a></li>
-                <i class="fas fa-times" oneclick="closemenu()"></i>
+                <!-- <i class="fa-solid fa-circle-xmark fa-shake fa-2xs" style="color: #36383a;"></i> -->
             </ul>
-            <i class="fas fa-bars" oneclick="openmenu()"></i>
-
+            <!-- <i class="fa-duotone fa-bars fa-beat fa-sm" style="--fa-primary-color: #000000; --fa-secondary-color: #e60000;"></i> -->
         </nav>
         <div class="header-text">
             <p>DATA SPECIALIST</p>
@@ -114,28 +113,57 @@
         <h1 class="sub-title">My work</h1>
         <div class="Work-list">
         <div class="work">
-            <img src="images/data.jpg">
+            <img src="./images/1.jpg">
             <div class="layer">
                 <h3>For More</h3>
                 <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
             </div>
         </div>
         <div class="work">
-            <img src="images/data-coll.jpg">
+            <img src="./images/10.jpeg">
             <div class="layer">
                 <h3>For More</h3>
                 <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
             </div>
         </div>
         <div class="work">
-            <img src="images/www.jpeg">
+            <img src="./images/4.jpeg">
+            <div class="layer">
+                <h3>For More</h3>
+                <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work">
+            <img src="./images/1.jpg">
+            <div class="layer">
+                <h3>For More</h3>
+                <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work">
+            <img src="./images/3.jpg">
+            <div class="layer">
+                <h3>For More</h3>
+                <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div> 
+            
+        </div>
+        <div class="work">
+            <img src="./images/7.jpeg">
+            <div class="layer">
+                <h3>For More</h3>
+                <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        <div class="work">
+            <img src="./images/8.png">
             <div class="layer">
                 <h3>For More</h3>
                 <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
             </div>
         </div>
         </div>
-        <a href="#" class="btn">See More</a>
+        <a  id="btn">See More</a>
     </div>
 </div>
 <!-------------------------------------------contact-------------------------------->
@@ -152,7 +180,7 @@
                     <a href="https://instagram.com/_lazy_dude_00?igshid=NjIwNzIyMDk2Mg=="><i class="fab fa-instagram"></i></a>
                     <a href=""><i class="fab fa-linkedin"></i></a>
                 </div>
-                <a href="https://drive.google.com/file/d/1shntNQk_sR7-hKc_jk3aVNGCMzKnVPw3/view?usp=sharing" target="_blank" class="btn btn2">Download CV</a>
+                <a href="https://drive.google.com/file/d/1shntNQk_sR7-hKc_jk3aVNGCMzKnVPw3/view?usp=sharing" target="_blank" class=" btn2">Download CV</a>
             </div>
             <div class="contact-right"></div>
             <form name="submit-to-google-sheet">
@@ -214,6 +242,22 @@ function opentab(tabname){
             })
         .catch(error => console.error('Error!', error.message))
     })
+  </script>
+  <script>
+    let btn = document.querySelector("#btn");
+    let works = [...document.querySelectorAll(".Work-list .work")]
+    let currentItem = 3;
+    
+    btn.onclick = ()=>{
+       for(let i =currentItem ; i< currentItem + 3;i++){
+        works[i].style.display = "inline-block"
+       }
+       currentItem+=3;
+
+       if( currentItem >= works.length){
+        btn.style.display = "none"
+       }
+    }
   </script>
 </body>
 </html> 
